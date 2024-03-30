@@ -1,0 +1,21 @@
+<div class="container" *ngIf="!loading">
+    <div class="row py-2">
+        <app-search></app-search>
+        <div class="col-md-4" *ngFor="let allUsers of users">
+            <div class=" d-flex justify-content-center align-items-center">
+                <div class="card " style="width: 18rem;">
+                    <img [src]="allUsers.avatar" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="badge text-black"> {{allUsers.first_name}}</h5>
+                        <p class="card-text">Email: {{allUsers.email}}</p>
+                        <p class="card-text"></p>
+                        <a [routerLink]="['/userdetails',allUsers.id]" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center w-100" *ngIf="loading">
+        <app-spinner></app-spinner>
+    </div>
+</div>

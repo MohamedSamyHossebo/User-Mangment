@@ -1,0 +1,9 @@
+<div class="input-group flex-nowrap m-2">
+    <span class="input-group-text" id="addon-wrapping">Search By ID</span>
+    <input (keyup)="getUser($event)" type="text" class="form-control" id="inputSerch" placeholder="ID"
+        aria-label="Username" aria-describedby="addon-wrapping">
+        <div class="text-center w-100" *ngIf="loading">
+            <app-spinner></app-spinner>
+        </div>
+        
+</div>

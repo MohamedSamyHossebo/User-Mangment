@@ -1,0 +1,22 @@
+<div class="container " *ngIf="!loading">
+    <div class="row py-2">
+        <div class="col-md-4">
+            <div class=" d-flex justify-content-center align-items-center">
+                <div class="card " style="width: 18rem;">
+                    <img [src]="user.avatar" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text text-center"> ID :{{user.id}}</p>
+                        <p class="text-black">First Name : {{user.first_name}}</p>
+                        <p class="card-text">Last Name :{{user.last_name}}</p>
+                        <p class="card-text">Email :{{user.email}}</p>
+                        <a [routerLink]="['/back']" class="btn btn-primary">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center w-100" *ngIf="loading">
+        <app-spinner></app-spinner>
+    </div>
+
+</div>
